@@ -23,8 +23,6 @@ public class Main {
 //		List<Product> lst = daoImpl.getAllProduct();
 //		lst.forEach(System.out::println);
 		
-		List<OrderTable> product = daoImpl.getAllOrder();
-		System.out.println(product);
 		
 	}
 
