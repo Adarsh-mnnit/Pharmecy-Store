@@ -31,21 +31,34 @@ public class CustomerDaoImpl implements CustomerDao {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	
-	
+	/*
+	 create table admin(
+		 adminid varchar(20) primary key,
+		 password varchar(15) not null,
+		 emailid  varchar(20) not null unique,
+		 age int not null,
+		 contact char(10) not null unique,
+		 city varchar(20) not null,
+		 state varchar(20) not null,
+		 pincode char(6) not null unique
+		 );
+	 */
 
 
 	@Override
 	public boolean addCusomer(Customer customer) {
 		try {
-			String query = "insert into product(name,subcategoryid,description,units,price)"
-					+ " values(?,?,?,?,?)";
+			String query = "insert into admin values "
+					+ "(?,?,?,?,?,?,?,?) ";
 			int count = jdbcTemplate.execute(query,new PreparedStatementCallback<Integer>(){
 
 				@Override
 				public Integer doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 					
-					
-					
+					ps.setString(1, customer.getCustomerid());
+					ps.setString(2, customer.getPassword());
+					ps.setString(3, customer.getEmailid());
+					ps.setInt(4, customer.getAge());
 					
 					return ps.executeUpdate();
 				}
