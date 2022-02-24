@@ -8,11 +8,11 @@ public interface CustomerDao {
 	
 	boolean addCusomer(Customer customer);
 	boolean updateCustomer(Customer customer);
-	boolean deleteCustomer(Customer customer);
+	boolean deleteCustomer(String customerid);
 	
 	List<Customer> getAllCustomer();
-	Customer getCostomerByName(String CustomerName);
-	Customer getCustomerById(String CustomerId);
+	Customer getCostomerById(String CustomerName);
+	Customer getCustomerByEmail(String CustomerEmail);
 	
 
 }

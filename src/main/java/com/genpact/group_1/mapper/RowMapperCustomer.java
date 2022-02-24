@@ -3,13 +3,14 @@ package com.genpact.group_1.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.genpact.group_1.model.Customer;
-import com.genpact.group_1.model.OrderTable;
+import org.springframework.jdbc.core.RowMapper;
 
-public class CustomerMapper {
-	
-	public static Customer mapCustomer(ResultSet rs) throws SQLException
-	{
+import com.genpact.group_1.model.Customer;
+
+public class RowMapperCustomer implements RowMapper<Customer>{
+
+	@Override
+	public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Customer customer = new Customer();
 		customer.setCustomerid(rs.getString("customerid"));
 		customer.setPassword(rs.getString("password"));

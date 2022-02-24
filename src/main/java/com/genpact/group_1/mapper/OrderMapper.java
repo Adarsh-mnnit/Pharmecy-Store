@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import com.genpact.group_1.model.OrderTable;
 
 public class OrderMapper {
+	
 	public static OrderTable mapOrder(ResultSet rs) throws SQLException
 	{
 		OrderTable order = new OrderTable();
